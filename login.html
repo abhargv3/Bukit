@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Login</title>
+        <script type="text/javascript" src="angular.js"></script>
+        <script type="text/javascript" src="angular-route.min.js"></script>
+        <script src = "login.js"></script>
+        <link rel="stylesheet" href="loginstyle.css">
+    </head>
+    <body>
+        <div ng-app="loginApp">
+            <a href="#loginView">Log In</a>
+            <a href="#createView">Sign up</a>
+            <ng-view></ng-view>
+            
+            <script type="text/ng-template" id="login.htm">
+                <div><!--Incase any styling is needed-->
+                    <h2>Log In</h2>
+                    <br/>
+                    <div>
+                        <table>
+                            <tr>
+                                <td><input class="rounded2" placeholder="Username" type="text" ng-model=""/></td>
+                                <td><p ng-show="unmNF" class="error-msg">Username not found!</p></td>
+                            </tr>
+                            <tr>
+                                <td><input class="rounded2" placeholder="Password" type="password" ng-model=""/></td>
+                                <td><p ng-show="incorPw" class="error-msg">Incorrect Password!</p></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+               
+                <button class="loginButton" ng-click="">Login</button>
+                <br/><br/>
+                <a href="" id="forgotLink">Forgot your username or password?</a><!--Insert link to reset password-->
+            </script>
+            
+            <script type="text/ng-template" id="create.htm">
+                <form name="createForm">
+                    <h2>Create New Account</h2>
+                    <button ng-click="FBLogin()" class="fbLogin">LOG IN WITH FACEBOOK</button>
+                    <br/><br/>
+                    <table class="inputFields">
+                        <tr>
+                            <td><input class="rounded2" placeholder="Choose a username" type="text" ng-model="username"/></td>
+                            <td><p ng-show="invalUnm" class="error-msg">Username is not available!</p></td>
+                        </tr>
+                        <tr>
+                            <td><input class="rounded2" type="password" placeholder="Choose a password" ng-model="password1"/></td>
+                            <td><p ng-show="invalPwd" class="error-msg">The Password is too weak!</p></td>
+                        </tr>
+                        <tr>
+                            <td><input class="rounded2" placeholder="Confirm password" type="password" ng-model="password2"/></td>
+                            <td><p ng-show="invalPwd2" class="error-msg">Passwords do not match!</p></td>
+                        </tr>
+                        <tr>
+                            <td><input class="rounded2" name ="email" placeholder="Email Address" type="email" ng-model="email" /></td>
+                            <td><p ng-show="invalEmail" class="error-msg">Invalid Email!</p></td>
+                        </tr>
+                    </table>
+                    <input class="loginButton" ng-click ="checkDetails()" type="button" value="Sign Up"/>
+                    <br/> 
+                    
+                    
+                </form>
+            </script>
+        
+        </div>
+    </body>
+</html>

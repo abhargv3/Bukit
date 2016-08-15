@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bukit</title>
+        <!-- Latest compiled and minified AngularJavaScript -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        
+        <!-- Local Additional Files -->
+        <script src="app.route.js"></script>
+        <script src="app.module.js"></script>
+        
+    </head>
+    <body ng-app="myRouteApp">
+        <header class="container-fluid bg-info">
+            <div class="col-xs-10">   
+            <h2 class="title">Bukit</h2>    
+            </div>
+            <!-- Interactive Profile Pic with dropdown -->
+            <!-- FIX THE GRID SYSTEM -->
+            
+            <div class="col-xs-1">
+                <div class="dropdown">
+                    <img src="https://avatars3.githubusercontent.com/u/15132963?v=3&s=460" class="img-responsive img-circle dropdown-toggle" data-toggle="dropdown"/>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#bukit-home">Home</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#my-bukits">My Bukits</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#my-settings">Settings</a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us {{1+3}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+          </header>  
+            <!--<div ng-app="myRouteApp">
+                {{2+3}}
+                <a href="#bukit-home">Goto V1</a>
+                <a href="#my-bukits">Goto V2</a>
+                <a href="#my-settings">Goto settings</a>
+                <div ng-view></div>
+            </div>
+            <br/>-->
+        
+            <div ng-view></div>
+        
+    </body>
+</html>
